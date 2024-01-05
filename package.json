@@ -1,0 +1,23 @@
+{
+  "name": "elysia-node",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "start:watch": "node --watch ./dist/index.js",
+    "build": "tsc",
+    "build:watch": "tsc -w",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"pnpm build:watch\" \"pnpm start:watch\" ",
+    "onetime": "tsc && node ./dist/p1totext.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@bogeychan/elysia-polyfills": "^0.6.1",
+    "@sinclair/typebox": "^0.32.5",
+    "elysia": "^0.8.8"
+  }
+}
